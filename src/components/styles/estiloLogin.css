@@ -1,0 +1,31 @@
+.formularioIngreso{
+    width: 50vw;
+    height: 50vh;
+    align-content: center;
+    margin-top: 25vh;
+    margin-left: 25vw;
+}
+input{
+    align-content: center;
+    text-align: center;
+    margin-top: 3%;
+    width: 50%;
+    margin-left: 25%;
+}
+.botonIngreso{
+    margin-top: 2%;
+    width: 50%;
+    margin-left: 25%;
+    align-content: center;
+}
+button{
+    margin-left: 25%;
+    width: 50%;
+    margin-top: 10%;
+}
+.titulo{
+    color: grey;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}

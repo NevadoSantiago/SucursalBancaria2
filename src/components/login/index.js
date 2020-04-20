@@ -1,9 +1,14 @@
 import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import {BASE_CLIENTES_URL} from '../constantes/URLs'
+import '../styles/estiloLogin.css'
 
 const datosLogueo = {
     data : null
+}
+const datosIngreso = {
+    password: null,
+    usuario: null
 }
 
 class Login extends Component {
@@ -20,24 +25,33 @@ class Login extends Component {
             datosLogueo.data = myJson
         })
     }
+    modificarDatosIngresados = (dato) =>{
+        if(dato.target.name === "user"){
+            var datoIngresado = dato.target.value
+            datosIngreso.usuario = datoIngresado
+        }
+        else if(dato.target.name === "pass"){
+            var datoIngresado = dato.target.value
+            datosIngreso.password = datoIngresado
+        }
+    }
 
 
     render(){
-        const {username, name, rol, handleSetUser} = this.props;
+        const {handleSetUser} = this.props;
         return(
-            <Fragment>
-                <form onSubmit={handleSetUser}>
-                    <input type="text" name="user" required></input>
-                    <input type="password" name="pass" required></input>
-                    <p>{username}</p>
-                    <p>{name}</p>
-                    <p>{rol}</p>
-                    <button>
-                        Prueba
+            <div className="formularioIngreso">
+                <div className="titulo">
+                    <h2>Sucursal Bancaria</h2>
+                </div>
+                <input type="text" onChange = {e =>this.modificarDatosIngresados(e)} name="user" placeholder="Usuario" required></input>
+                <input type="password" onChange = {e =>this.modificarDatosIngresados(e)} name="pass" placeholder="Contraseña" required></input>
+                <div className="botonIngreso">
+                    <button onClick = {handleSetUser}>
+                        Ingresar
                     </button>
-                </form>
-
-            </Fragment>
+                </div>
+            </div>
             
         )
     }
@@ -46,9 +60,7 @@ class Login extends Component {
 
 const mapDispatchToProps = dispatch =>{
     return {
-        setRol: (data) => dispatch({type: "setRol", data}),
-        handleSetUser: (data) => dispatch({type: "LOGUEO_USUARIO", data, datosBase:datosLogueo.data}),
-        setUsername:(data) => dispatch({type: "setUsername", data})
+        handleSetUser: () => dispatch({type: "LOGUEO_USUARIO", datosIngreso, datosBase:datosLogueo.data}),
     };
 }
 const mapStateToProps = state => {

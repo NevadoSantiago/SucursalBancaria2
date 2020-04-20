@@ -1,0 +1,59 @@
+{
+    "results":[
+        {
+            "listUser":[
+                {
+                    "data":
+                    {
+                        "id":1,
+                        "usuario":"soyUsuario",
+                        "pass":"usuario",
+                        "rol":"user",
+                        "nombre":"Santiago",
+                        "apellido":"Nevado",
+                        "dni":"24352344",
+                        "fechaNacimiento":"06-09-1997",
+                        "direccion":"pringles 1343",
+                        "ciudad":"Maartinez",
+                        "tel":"24234334323",
+                        "mail":"asds@gmail.com"
+                    }
+                },
+                {
+                    "data":
+                    {
+                        "id":2,
+                        "usuario":"soyAdmin",
+                        "pass":"soyAdmin",
+                        "rol":"admin",
+                        "nombre":"Juan",
+                        "apellido":"Gonzales",
+                        "dni":"465767463",
+                        "fechaNacimiento":"06-09-2000",
+                        "direccion":"calle falsa 123",
+                        "ciudad":"Saavedra",
+                        "tel":"34567876543",
+                        "mail":"asds@gmail.com"
+                    }
+                },
+                {
+                    "data":
+                    {
+                        "id":3,
+                        "usuario":"soyAgente",
+                        "pass":"soyAgente",
+                        "rol":"agente",
+                        "nombre":"El Agente",
+                        "apellido":"El mejor",
+                        "dni":"46767463",
+                        "fechaNacimiento":"06-09-2004",
+                        "direccion":"calle falsa 1234",
+                        "ciudad":"Saavedra Capital",
+                        "tel":"345643",
+                        "mail":"asdddddss@gmail.com"
+                    }
+                }
+            ]
+        }
+    ]
+}

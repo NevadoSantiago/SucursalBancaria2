@@ -12,11 +12,10 @@ const datosLogueo = {
 }
 
      const validarDatos = (data, datosBase) => {
-        const usuario = data.user.value;
-        const password = data.user.value
+        const {usuario, password} = data
         var logueado = null;
         datosLogueo.data = null;
-
+        debugger
      const arregloUsuarios = datosBase.results[0].listUser;
         var contador = 0;
         const cantidadUsuarios = arregloUsuarios.length;
@@ -34,8 +33,7 @@ const datosLogueo = {
 const userReducer = (state = initialState, action) => {
     switch(action.type){
         case "LOGUEO_USUARIO" :{
-            debugger
-            var logueado = validarDatos(action.data.target, action.datosBase);
+            var logueado = validarDatos(action.datosIngreso, action.datosBase);
             if(logueado != null){
 
                 const newName = logueado.data.nombre;
@@ -59,14 +57,14 @@ const userReducer = (state = initialState, action) => {
             }
 
         }
-        case "setRol":{
+        case "setUsuarioLogueo":{
             const newRol = action.data.rol;
             return{
                 ...state,
                 rol:newRol
             }
         }
-        case "setUsername":{
+        case "setPasswordLogueo":{
             const newUsername = action.data.usuario;
             return{
                 ...state,
