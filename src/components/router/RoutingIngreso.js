@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import Admin from '../admin'
 import User from '../user'
 import Agente from '../agente'
+import {ADMIN, USER, ROL_AGENTE} from '../../constantes/RolesConst'
 
 class RoutingIngreso extends Component{
 
@@ -15,17 +16,17 @@ class RoutingIngreso extends Component{
                     <Login />
                 )
             }
-            case "admin": {
+            case ADMIN: {
                 return(
                     <Admin/>
                 )
             }
-            case "user":{
+            case USER:{
                 return(
                     <User/>
                 )
             }
-            case "agente":{
+            case ROL_AGENTE:{
                 return(
                     <Agente/>
                 )

@@ -3,7 +3,6 @@ import './App.css';
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import Reducer from './reducers'
-import Switch from 'react'
 import RoutingIngreso from './components/router/RoutingIngreso'
 
 function App() {

@@ -1,0 +1,38 @@
+{
+    "results":[
+        {
+            "listSucursales":[
+                {
+                    "data":
+                    {
+			"direccion" : "la calle 300",
+			"ciudad" : "Buenos Aires",
+			"region" : "Martinez",
+			"tel": "123432334",
+			"correo": "LaSucursal@laMejor.com"
+                    }
+                },
+                {
+                    "data":
+                    {
+			"direccion" : "la calle 400",
+			"ciudad" : "Mendoza",
+			"region" : "Ciudad",
+			"tel": "112344",
+			"correo": "LaSucursal@laPeor.com"
+                    }
+                },
+                {
+                    "data":
+                    {
+			"direccion" : "la calle 600",
+			"ciudad" : "Bogota",
+			"region" : "ElBarrio",
+			"tel": "45332443",
+			"correo": "America@latina.com"
+                    }
+                }
+            ]
+        }
+    ]
+}

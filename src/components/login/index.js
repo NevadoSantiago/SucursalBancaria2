@@ -1,7 +1,8 @@
-import React, {Component, Fragment} from 'react'
+import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {BASE_CLIENTES_URL} from '../constantes/URLs'
+import {BASE_CLIENTES_URL} from '../../constantes/URLs'
 import '../styles/estiloLogin.css'
+import {LOGUEO_USUARIO,SETEAR_BASE_SUCURSALES,SETEAR_BASE_USUARIOS} from '../../constantes/ActionConst'
 
 const datosLogueo = {
     data : null
@@ -15,7 +16,6 @@ class Login extends Component {
 
 
     async componentDidMount () {
-        var datos;
         await fetch(BASE_CLIENTES_URL)
         
         .then(function(response){
@@ -27,12 +27,12 @@ class Login extends Component {
     }
     modificarDatosIngresados = (dato) =>{
         if(dato.target.name === "user"){
-            var datoIngresado = dato.target.value
-            datosIngreso.usuario = datoIngresado
+            var datoUserIngresado = dato.target.value
+            datosIngreso.usuario = datoUserIngresado
         }
         else if(dato.target.name === "pass"){
-            var datoIngresado = dato.target.value
-            datosIngreso.password = datoIngresado
+            var datoPassIngresado = dato.target.value
+            datosIngreso.password = datoPassIngresado
         }
     }
 
@@ -60,18 +60,12 @@ class Login extends Component {
 
 const mapDispatchToProps = dispatch =>{
     return {
-        handleSetUser: () => dispatch({type: "LOGUEO_USUARIO", datosIngreso, datosBase:datosLogueo.data}),
+        handleSetUser: () => dispatch({type: LOGUEO_USUARIO, datosIngreso, datosBase:datosLogueo.data}),
+        handleSetListaUser:(dato) => dispatch({type: SETEAR_BASE_USUARIOS, dato })
     };
 }
-const mapStateToProps = state => {
-    return{
-        rol: state.user.rol,
-        username: state.user.username,
-        name : state.user.name
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(Login);
 
 
 

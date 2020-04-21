@@ -1,4 +1,6 @@
-import {BASE_CLIENTES_URL} from '../components/constantes/URLs'
+
+import {LOGUEO_USUARIO,CERRAR_SESION} from '../constantes/ActionConst'
+import {ADMIN, USER, ROL_AGENTE} from '../constantes/RolesConst'
 
 const initialState={
     username: null,
@@ -15,14 +17,13 @@ const datosLogueo = {
         const {usuario, password} = data
         var logueado = null;
         datosLogueo.data = null;
-        debugger
      const arregloUsuarios = datosBase.results[0].listUser;
         var contador = 0;
         const cantidadUsuarios = arregloUsuarios.length;
 
     while(contador<cantidadUsuarios && datosLogueo.data == null){
         const usuarioBase = arregloUsuarios[contador];
-        if(usuario === usuarioBase.data.usuario && password===usuarioBase.data.pass){
+        if(usuario.toUpperCase() === usuarioBase.data.usuario.toUpperCase() && password===usuarioBase.data.pass){
             logueado = usuarioBase;
         }
         contador ++;
@@ -32,14 +33,27 @@ const datosLogueo = {
 
 const userReducer = (state = initialState, action) => {
     switch(action.type){
-        case "LOGUEO_USUARIO" :{
+        case LOGUEO_USUARIO :{
             var logueado = validarDatos(action.datosIngreso, action.datosBase);
             if(logueado != null){
 
                 const newName = logueado.data.nombre;
                 const newUsername = logueado.data.usuario;
-                const newRol = logueado.data.rol;
+                var newRol = logueado.data.rol;
                 const newId = logueado.data.id;
+                switch(newRol){
+                    case "admin":
+                        newRol = ADMIN;
+                    
+                    break;
+                    case "agente" : 
+                        newRol = ROL_AGENTE;
+                    
+                    break;
+                    default:
+                        newRol = USER;
+                    
+                }
                 return{
                     ...state,
                     rol:newRol,
@@ -57,18 +71,14 @@ const userReducer = (state = initialState, action) => {
             }
 
         }
-        case "setUsuarioLogueo":{
-            const newRol = action.data.rol;
+        case CERRAR_SESION:{
+            
             return{
                 ...state,
-                rol:newRol
-            }
-        }
-        case "setPasswordLogueo":{
-            const newUsername = action.data.usuario;
-            return{
-                ...state,
-                username:newUsername
+                rol:null,
+                username:null,
+                name:null,
+                id : null
             }
         }
          default:

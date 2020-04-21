@@ -1,4 +1,4 @@
-import {BASE_CLIENTES_URL} from '../constantes/URLs'
+import {BASE_CLIENTES_URL} from '../../constantes/URLs'
 
 export const getDatos = async () => {
     var datos;
