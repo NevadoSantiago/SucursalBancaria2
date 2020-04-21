@@ -16,7 +16,8 @@
                         "direccion":"pringles 1343",
                         "ciudad":"Maartinez",
                         "tel":"24234334323",
-                        "mail":"asds@gmail.com"
+                        "mail":"asds@gmail.com",
+                        "usuariosACargo":[]
                     }
                 },
                 {
@@ -33,7 +34,8 @@
                         "direccion":"calle falsa 123",
                         "ciudad":"Saavedra",
                         "tel":"34567876543",
-                        "mail":"asds@gmail.com"
+                        "mail":"asds@gmail.com",
+                        "usuariosACargo":[]
                     }
                 },
                 {
@@ -97,7 +99,8 @@
                         "direccion":"calle falsa 1235443",
                         "ciudad":"Corrientes",
                         "tel":"1123323222",
-                        "mail":"asds@yahoo.com"
+                        "mail":"asds@yahoo.com",
+                        "usuariosACargo":[]
                     }
                 },
                 {
@@ -114,7 +117,8 @@
                         "direccion":"calle falsedad 123",
                         "ciudad":"Hipodromo de palermo",
                         "tel":"334343",
-                        "mail":"asdsss@hotmail.com"
+                        "mail":"asdsss@hotmail.com",
+                        "usuariosACargo":[]
                     }
                 },
                 {
@@ -146,6 +150,7 @@
                                 "ciudad":"Saavedra",
                                 "tel":"34567876543",
                                 "mail":"asds@gmail.com"
+
                             },
                             {
                                 "id":4,

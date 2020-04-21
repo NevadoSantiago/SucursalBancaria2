@@ -5,23 +5,8 @@ import {SUCURSALES,CLIENTES} from '../../constantes/VistasConst'
 import {SETEAR_BASE_SUCURSALES} from '../../constantes/ActionConst'
 import Sucursales from '../tablas/Sucursales'
 
-const datosSucursal = {
-    datos : null
-}
-
 
 class Admin extends Component {
-
-    async componentDidMount () {
-
-        await fetch(BASE_SUCURSALES_URL)
-        .then(function(response){
-            return response.json()
-        })
-        .then(function(myJson){
-            datosSucursal.datos = myJson
-        })
-    }
 
 
     render(){

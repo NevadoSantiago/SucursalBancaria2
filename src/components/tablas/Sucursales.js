@@ -5,13 +5,9 @@ import NavBar from '../../extras/navBar'
 import {BASE_SUCURSALES_URL} from '../../constantes/URLs'
 import {SETEAR_BASE_SUCURSALES} from '../../constantes/ActionConst'
 
-
-
-
 class Sucursales extends Component{
 render(){
     const {data} = this.state
-    const {setearBaseSucursal} =this.props
 
     if(data==null){
         return(
@@ -26,7 +22,6 @@ render(){
         return(
             
             <Fragment>
-                {setearBaseSucursal}
                 <NavBar/>
                 <h2>SUCURSALES</h2>
             </Fragment>
@@ -45,7 +40,6 @@ const mapStateToProps = store =>{
 
 const mapDispatchToProps = dispatch =>{
     return {
-        setearBaseSucursal: () => dispatch({type:SETEAR_BASE_SUCURSALES, datosSucursal}),
     }
 }
 

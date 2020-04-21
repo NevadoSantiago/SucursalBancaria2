@@ -1,5 +1,5 @@
 import React from 'react'
-import {SETEAR_BASE_SUCURSALES} from '../constantes/ActionConst'
+import {LOGUEO_USUARIO} from '../constantes/ActionConst'
 
 const initialState = {
 
@@ -12,10 +12,11 @@ const initialState = {
 const datosBaseReducer = (state = initialState, action) => {
     debugger
     switch(action.type){
-        case SETEAR_BASE_SUCURSALES: {
+        case LOGUEO_USUARIO: {
             return{
                 ...state,
-                sucursales : action.datosSucursal
+                sucursales : action.datosBase.results[1],
+                usuarios : action.datosBase.results[0]
             }
         }
         default : {
