@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {BASE_CLIENTES_URL} from '../../constantes/URLs'
+import {BASE_CLIENTES_URL, BASE_SUCURSALES_URL} from '../../constantes/URLs'
 import '../styles/estiloLogin.css'
 import {LOGUEO_USUARIO,SETEAR_BASE_SUCURSALES,SETEAR_BASE_USUARIOS} from '../../constantes/ActionConst'
 
@@ -24,6 +24,7 @@ class Login extends Component {
         .then(function(myJson){
             datosLogueo.data = myJson
         })
+
     }
     modificarDatosIngresados = (dato) =>{
         if(dato.target.name === "user"){

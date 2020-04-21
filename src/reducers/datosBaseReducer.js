@@ -1,4 +1,5 @@
 import React from 'react'
+import {SETEAR_BASE_SUCURSALES} from '../constantes/ActionConst'
 
 const initialState = {
 
@@ -9,17 +10,21 @@ const initialState = {
 }
 
 const datosBaseReducer = (state = initialState, action) => {
+    debugger
     switch(action.type){
-        case "asd": {
+        case SETEAR_BASE_SUCURSALES: {
             return{
+                ...state,
+                sucursales : action.datosSucursal
+            }
+        }
+        default : {
+            return {
                 ...state
             }
         }
 
 
-    }
-    return{
-        ...state
     }
 }
 

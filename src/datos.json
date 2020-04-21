@@ -50,7 +50,152 @@
                         "direccion":"calle falsa 1234",
                         "ciudad":"Saavedra Capital",
                         "tel":"345643",
-                        "mail":"asdddddss@gmail.com"
+                        "mail":"asdddddss@gmail.com",
+                        "usuariosACargo":[
+                            {
+                                "id":1,
+                                "usuario":"soyUsuario",
+                                "pass":"usuario",
+                                "rol":"user",
+                                "nombre":"Santiago",
+                                "apellido":"Nevado",
+                                "dni":"24352344",
+                                "fechaNacimiento":"06-09-1997",
+                                "direccion":"pringles 1343",
+                                "ciudad":"Maartinez",
+                                "tel":"24234334323",
+                                "mail":"asds@gmail.com"
+                            },
+                            {
+                                "id":5,
+                                "usuario":"Juan",
+                                "pass":"perez",
+                                "rol":"user",
+                                "nombre":"Juan",
+                                "apellido":"Perez",
+                                "dni":"2454433",
+                                "fechaNacimiento":"04-09-2000",
+                                "direccion":"calle falsedad 123",
+                                "ciudad":"Hipodromo de palermo",
+                                "tel":"334343",
+                                "mail":"asdsss@hotmail.com"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "data":
+                    {
+                        "id":4,
+                        "usuario":"soyPrueba",
+                        "pass":"soyPrueba",
+                        "rol":"user",
+                        "nombre":"La prueba",
+                        "apellido":"Del millon",
+                        "dni":"3456783",
+                        "fechaNacimiento":"06-12-2000",
+                        "direccion":"calle falsa 1235443",
+                        "ciudad":"Corrientes",
+                        "tel":"1123323222",
+                        "mail":"asds@yahoo.com"
+                    }
+                },
+                {
+                    "data":
+                    {
+                        "id":5,
+                        "usuario":"Juan",
+                        "pass":"perez",
+                        "rol":"user",
+                        "nombre":"Juan",
+                        "apellido":"Perez",
+                        "dni":"2454433",
+                        "fechaNacimiento":"04-09-2000",
+                        "direccion":"calle falsedad 123",
+                        "ciudad":"Hipodromo de palermo",
+                        "tel":"334343",
+                        "mail":"asdsss@hotmail.com"
+                    }
+                },
+                {
+                    "data":
+                    {
+                        "id":6,
+                        "usuario":"soyOtroAgente",
+                        "pass":"soyOtroAgente",
+                        "rol":"agente",
+                        "nombre":"el super",
+                        "apellido":"agente 86",
+                        "dni":"334534",
+                        "fechaNacimiento":"06-07-2000",
+                        "direccion":"Sprinfield 332",
+                        "ciudad":"Ciudad de",
+                        "tel":"222222222",
+                        "mail":"asdasas@gmail.com.ar",
+                        "usuariosACargo":[
+                            {
+                                "id":2,
+                                "usuario":"soyAdmin",
+                                "pass":"soyAdmin",
+                                "rol":"admin",
+                                "nombre":"Juan",
+                                "apellido":"Gonzales",
+                                "dni":"465767463",
+                                "fechaNacimiento":"06-09-2000",
+                                "direccion":"calle falsa 123",
+                                "ciudad":"Saavedra",
+                                "tel":"34567876543",
+                                "mail":"asds@gmail.com"
+                            },
+                            {
+                                "id":4,
+                                "usuario":"soyPrueba",
+                                "pass":"soyPrueba",
+                                "rol":"user",
+                                "nombre":"La prueba",
+                                "apellido":"Del millon",
+                                "dni":"3456783",
+                                "fechaNacimiento":"06-12-2000",
+                                "direccion":"calle falsa 1235443",
+                                "ciudad":"Corrientes",
+                                "tel":"1123323222",
+                                "mail":"asds@yahoo.com"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "listSucursales":[
+                {
+                    "data":
+                    {
+			"direccion" : "la calle 300",
+			"ciudad" : "Buenos Aires",
+			"region" : "Martinez",
+			"tel": "123432334",
+			"correo": "LaSucursal@laMejor.com"
+                    }
+                },
+                {
+                    "data":
+                    {
+			"direccion" : "la calle 400",
+			"ciudad" : "Mendoza",
+			"region" : "Ciudad",
+			"tel": "112344",
+			"correo": "LaSucursal@laPeor.com"
+                    }
+                },
+                {
+                    "data":
+                    {
+			"direccion" : "la calle 600",
+			"ciudad" : "Bogota",
+			"region" : "ElBarrio",
+			"tel": "45332443",
+			"correo": "America@latina.com"
                     }
                 }
             ]
