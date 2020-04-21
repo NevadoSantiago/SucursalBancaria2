@@ -6,7 +6,6 @@ const initialState = {
 }
 
 const vistaReducer = (state = initialState, action) => {
-    debugger
     switch(action.type){
         case AGENTES :{
             return{

@@ -10,7 +10,6 @@ const initialState = {
 }
 
 const datosBaseReducer = (state = initialState, action) => {
-    debugger
     switch(action.type){
         case LOGUEO_USUARIO: {
             return{
