@@ -1,9 +1,12 @@
 import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import NavBar from '../../extras/navBar'
-import {SUCURSALES,CLIENTES} from '../../constantes/VistasConst'
-import {SETEAR_BASE_SUCURSALES} from '../../constantes/ActionConst'
-import Sucursales from '../tablas/Sucursales'
+import {SUCURSALES,CLIENTES,MODIFICAR_SUCURSAL,MODIFICAR_USUARIO} from '../../constantes/VistasConst'
+import {AGREGAR_CLIENTE,AGREGAR_SUCURSAL} from '../../constantes/ActionConst'
+import Sucursales from '../tablas/sucursales'
+import Clientes from '../tablas/clientes'
+import CartelBienvenida from '../../extras/cartelBienvenida'
+import ModificarCliente from '../tablas/clientes/modificarCliente'
 
 
 class Admin extends Component {
@@ -11,14 +14,13 @@ class Admin extends Component {
 
     render(){
         const {name, vista} = this.props
+        debugger
     switch(vista){
         case (null) : {
             return(
                 <Fragment>
                     <NavBar/>
-                    <div className = "titulo">
-                        <h2>Bienvenido {name}</h2>
-                    </div>
+                    <CartelBienvenida nombre = {name}/>
                 </Fragment>
             )
         }
@@ -26,6 +28,27 @@ class Admin extends Component {
             
             return(
                 <Sucursales/>
+            )
+        }
+        case (CLIENTES) : {
+            return(
+                <Clientes/>
+            )
+        }
+        case (MODIFICAR_USUARIO): {
+            return(
+                <Fragment>
+                    <ModificarCliente/>
+                </Fragment>
+                
+            )
+        }
+        case(AGREGAR_CLIENTE): {
+            return(
+                <Fragment>
+                    <ModificarCliente/>
+                </Fragment>
+                
             )
         }
 

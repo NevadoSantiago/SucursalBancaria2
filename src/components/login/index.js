@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {BASE_CLIENTES_URL, BASE_SUCURSALES_URL} from '../../constantes/URLs'
-import '../styles/estiloLogin.css'
+import '../../styles/estiloLogin.css'
 import {LOGUEO_USUARIO} from '../../constantes/ActionConst'
 
 const datosLogueo = {
@@ -41,13 +41,23 @@ class Login extends Component {
         const {handleSetUser} = this.props;
         return(
             <div className="formularioIngreso">
+                <div>
+                    <p>Para ingresar como admin: usuario: soyAdmin pass:soyAdmin</p>
+                    <p>Para ingresar como usuario: usuario: soyUsuario pass:usuario</p>
+                    <p>Para ingresar como agente: usuario: soyAgente pass:soyAgente</p>
+                </div>
                 <div className="titulo">
                     <h2>Sucursal Bancaria</h2>
                 </div>
-                <input type="text" onChange = {e =>this.modificarDatosIngresados(e)} name="user" placeholder="Usuario" required></input>
-                <input type="password" onChange = {e =>this.modificarDatosIngresados(e)} name="pass" placeholder="Contraseña" required></input>
-                <div className="botonIngreso">
-                    <button onClick = {handleSetUser}>
+                <div className="divInputIngreso">
+                    <input id="inputIngreso" type="text" onChange = {e =>this.modificarDatosIngresados(e)} name="user" placeholder="Usuario" required></input>
+                </div>
+                <div className="divInputIngreso">
+                <input id="inputIngreso" type="password" onChange = {e =>this.modificarDatosIngresados(e)} name="pass" placeholder="Contraseña" required></input>
+                </div>
+
+                <div className="divBoton">
+                    <button onClick = {handleSetUser} id="botonIngreso">
                         Ingresar
                     </button>
                 </div>

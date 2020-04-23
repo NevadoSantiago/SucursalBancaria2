@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import {CERRAR_SESION} from '../constantes/ActionConst'
-import {AGENTES,AGENTE,AGENTE_CLIENTES,CLIENTES,MENSAJE,SUCURSAL,SUCURSALES} from '../constantes/VistasConst'
+import {CERRAR_SESION, AGREGAR_CLIENTE,AGREGAR_SUCURSAL} from '../constantes/ActionConst'
+import {AGENTES,AGENTE,AGENTE_CLIENTES,CLIENTES,MENSAJE,SUCURSAL,SUCURSALES,HOME} from '../constantes/VistasConst'
 import {connect} from 'react-redux'
 import {USER, ADMIN, ROL_AGENTE} from '../constantes/RolesConst'
 import '../styles/estiloAdmin.css'
@@ -15,15 +15,15 @@ render(){
         case ROL_AGENTE:{
            return(               
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a className="navbar-brand" onClick={e => cambiarVista(null)}>Sucursal Bancaria</a>
+            <a className="navbar-brand" onClick={e => cambiarVista(HOME)}>Sucursal Bancaria</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
           
             <div className="collapse navbar-collapse" id="navbarColor02">
               <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                  <a className="nav-link" onClick={e => cambiarVista(AGENTE_CLIENTES)}>Listado Clientes <span className="sr-only">(current)</span></a>
+                <li className="nav-item">
+                  <a className="nav-link" onClick={e => cambiarVista(AGENTE_CLIENTES)}>Listado Clientes</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" onClick={e => cambiarVista(SUCURSAL)}>Sucursal</a>
@@ -42,19 +42,25 @@ render(){
         case ADMIN :{
             return(               
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a className="navbar-brand" onClick={e => cambiarVista(null)}>Sucursal Bancaria</a>
+                <a className="navbar-brand" onClick={e => cambiarVista(HOME)}>Sucursal Bancaria</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
                 </button>
               
                 <div className="collapse navbar-collapse" id="navbarColor02">
                   <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active">
+                    <li className="nav-item">
                       <a className="nav-link" id="cambiarVista" onClick={e => cambiarVista(CLIENTES)}>
-                        Listado usuarios <span className="sr-only">(current)</span></a>
+                        Listado usuarios</a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" onClick={e => cambiarVista(SUCURSALES)}>Sucursales</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" onClick={e => cambiarVista(AGREGAR_CLIENTE)}>Generar cliente</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" onClick={e => cambiarVista(AGREGAR_SUCURSAL)}>Generar sucursal</a>
                     </li>
                   </ul>
                   <div className="form-inline my-2 my-lg-0" id="cerrarSesion">
@@ -67,15 +73,15 @@ render(){
         default:{
             return(               
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a className="navbar-brand" onClick={e => cambiarVista(null)}>Sucursal Bancaria</a>
+                <a className="navbar-brand" onClick={e => cambiarVista(HOME)}>Sucursal Bancaria</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
                 </button>
               
                 <div className="collapse navbar-collapse" id="navbarColor02">
                   <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active">
-                      <a className="nav-link" onClick={e => cambiarVista(AGENTE)}>Mi agente <span className="sr-only">(current)</span></a>
+                    <li className="nav-item">
+                      <a className="nav-link" onClick={e => cambiarVista(AGENTE)}>Mi agente</a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" onClick={e => cambiarVista(SUCURSAL)}>Sucursal</a>

@@ -1,3 +1,9 @@
 #cerrarSesion:hover{
     color: red;
 }
+#botonTabla{
+    margin-left: 2%;
+}
+#columnaBotones{
+    align-content: center;
+}

@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import NavBar from '../../extras/navBar'
-import {} from '../../constantes/VistasConst'
+import CartelBienvenida from '../../extras/cartelBienvenida'
 
 
 class User extends Component {
@@ -12,9 +12,7 @@ class User extends Component {
                 return(
                     <Fragment>
                         <NavBar/>
-                        <div className="cartelBienvenida">
-                            <h2>Bienvenido {name}</h2>
-                        </div>
+                        <CartelBienvenida nombre = {name}/>
                     </Fragment>
                 )
         }

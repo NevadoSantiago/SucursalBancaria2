@@ -5,6 +5,9 @@ export const AGENTES = "AGENTES"
 export const AGENTE = "AGENTE"
 export const MENSAJE = "MENSAJE"
 export const AGENTE_CLIENTES = "AGENTE_CLIENTES"
+export const MODIFICAR_USUARIO = "MODIFICAR_USUARIO"
+export const MODIFICAR_SUCURSAL = "MODIFICAR_SUCURSAL"
+export const HOME = "HOME"
 
 /* Perfil administrador
 ● Vista con listado de usuarios permitiendo funcionalidad CRUD a cada registro. Se
