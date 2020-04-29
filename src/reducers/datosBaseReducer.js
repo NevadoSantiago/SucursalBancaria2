@@ -1,8 +1,8 @@
 import React from 'react'
 import {LOGUEO_USUARIO,ELIMINAR_CLIENTE, ELIMINAR_SUCURSAL,SUCURSAL_EDITADA,CLIENTE_EDITADO,
     USUARIO_AGREGADO} from '../constantes/ActionConst'
-import {MODIFICAR_USUARIO,MODIFICAR_SUCURSAL} from '../constantes/VistasConst'
-import {datosUsuarioConst} from '../constantes/clientesDatosConst'
+import {MODIFICAR_USUARIO,MODIFICAR_SUCURSAL, AGENTE_CLIENTES,SUCURSAL,AGENTE} from '../constantes/VistasConst'
+import {datosUsuarioConst,datosSucursalConst} from '../constantes/clientesDatosConst'
 
 const initialState = {
 
@@ -11,9 +11,11 @@ const initialState = {
     sucursales:null,
     usuarioModificar: null,
     sucursalModificar: null,
+    mostrar:null,
 
 }
 const modeloUsuario = datosUsuarioConst;
+const modeloSucursal = datosSucursalConst
 
 const eliminarUsuario=(state, id)=>{
     const listaUsuarios = state.usuarios.listUser
@@ -30,6 +32,31 @@ const eliminarUsuario=(state, id)=>{
         contador ++;
     }
 }
+const eliminarSucursal=(state, id)=>{
+    const listaSucursales = state.sucursales.listSucursales
+    var contador = 0;
+    const tamanoLista = listaSucursales.length;
+    var encontrado = null;
+    var sucursal = null
+    while(contador<tamanoLista && encontrado == null){
+        sucursal = listaSucursales[contador];
+        var idSucursal = sucursal.data.id;
+        if(idSucursal === id){
+            listaSucursales[contador] = modeloSucursal
+        }
+        contador ++;
+    }
+}
+ const traerClientesDeAgente = (state, action) =>{
+
+     const usuario = traerUsuarioAModificar(state, action)
+    const usuariosACargo = usuario.data.usuariosACargo
+    return usuariosACargo
+
+
+ }
+
+
 const modificarUsuarioBase = (action,state) => {
     const nuevosDatos = action.data;
     var usuarioAModificar = state.usuarioModificar.data
@@ -72,16 +99,12 @@ const modificarUsuarioBase = (action,state) => {
     if(nuevosDatos.usuariosACargo != "" && nuevosDatos.usuariosACargo != null){
         usuarioAModificar.usuariosACargo  = nuevosDatos.usuariosACargo
     }
-    
-    
-
-    
+  
 }
 const agregarUsuario = (state, usuario) =>{
-    debugger
-    const usuarioNuevoID = state.usuarios.listUser.length
+    const usuarioNuevoID = state.usuarios.listUser.length + 1
     usuario.data.id = usuarioNuevoID;
-    state.usuarios.listUser[usuarioNuevoID] = usuario
+    state.usuarios.listUser[usuarioNuevoID - 1] = usuario
 }
 const traerUsuarioAModificar = (state, id) =>{
     const idAModificar = id.dato;
@@ -102,6 +125,9 @@ const traerUsuarioAModificar = (state, id) =>{
         encontrado
     )
 }
+const modificarSucursalBase =(action,state) =>{
+
+}
 
 const datosBaseReducer = (state = initialState, action) => {
     switch(action.type){
@@ -117,6 +143,15 @@ const datosBaseReducer = (state = initialState, action) => {
                 ...state
             }
         }
+        case AGENTE_CLIENTES:{
+            const clientes = traerClientesDeAgente(state, action)
+            
+            return{
+                ...state,
+                mostrar:clientes
+            }
+        }
+        
         case MODIFICAR_USUARIO:{
             const usuarioAModificar = traerUsuarioAModificar(state,action)
             return{
@@ -128,10 +163,20 @@ const datosBaseReducer = (state = initialState, action) => {
              modificarUsuarioBase(action.datosUsuario,state)
             return{
                 ...state,
+                usuarioModificar:null
             }
         }
+        case AGENTE:{
+            const usuarioLogueado = traerUsuarioAModificar(state,action)
+            const idAgenteAsociado = usuarioLogueado.data.idAgente
+            debugger
+           return{
+               ...state,
+               mostrar:null
+           }
+       }
         case SUCURSAL_EDITADA:{
-            
+            modificarSucursalBase(action.datosSucursal,state)
             return{
                 ...state,
             }
@@ -145,12 +190,18 @@ const datosBaseReducer = (state = initialState, action) => {
 
         }
         case ELIMINAR_SUCURSAL:{
+            eliminarSucursal(state, action.dato)
+            return{
+                ...state
+            }
 
         }
+        
         case USUARIO_AGREGADO:{
             agregarUsuario(state, action.datosUsuario)
             return{
-                ...state
+                ...state,
+                usuarioModificar:null
             }
         }
         default : {

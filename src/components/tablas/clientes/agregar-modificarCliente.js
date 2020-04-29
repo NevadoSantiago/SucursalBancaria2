@@ -89,8 +89,7 @@ class ModificarClientes extends Component{
         var mensaje = null;
 
         const alGuardar=()=>{
-            modificarOAgregarUsuario("e")
-            datosUsuario = datosUsuarioConst
+            modificarOAgregarUsuario()
         }
         switch(vista){    
             case MODIFICAR_USUARIO : {

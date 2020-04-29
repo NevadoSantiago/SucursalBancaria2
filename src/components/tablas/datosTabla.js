@@ -3,7 +3,7 @@ import '../../styles/estiloAdmin.css'
 import {SUCURSALES,CLIENTES} from '../../constantes/VistasConst'
 import {connect} from 'react-redux';
 import {ELIMINAR_CLIENTE, ELIMINAR_SUCURSAL} from '../../constantes/ActionConst'
-import {MODIFICAR_USUARIO,MODIFICAR_SUCURSAL} from '../../constantes/VistasConst'
+import {MODIFICAR_USUARIO,MODIFICAR_SUCURSAL, AGENTE_CLIENTES} from '../../constantes/VistasConst'
 
 class DatosTabla extends Component{
 constructor(props){
@@ -58,6 +58,25 @@ render(){
                             <button className="btn btn-danger" id="botonTabla" onClick={e=>verificacionEliminar(datos.data.id)}>
                                 Eliminar</button>
                         </td>
+                    </tr>
+                    )
+            }
+
+        }
+        case AGENTE_CLIENTES :{
+            debugger
+            if(datos.id != null){
+                return(
+                    <tr className="table-active">
+                        <td>{datos.id}</td>
+                        <td>{datos.usuario}</td>
+                        <td>{datos.rol}</td>
+                        <td>{datos.nombre}</td>
+                        <td>{datos.apellido}</td>
+                        <td>{datos.dni}</td>
+                        <td>{datos.fechaNacimiento}</td>
+                        <td>{datos.tel}</td>
+                        <td>{datos.mail}</td>
                     </tr>
                     )
             }

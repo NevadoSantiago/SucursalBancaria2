@@ -6,7 +6,7 @@ import {AGREGAR_CLIENTE,AGREGAR_SUCURSAL} from '../../constantes/ActionConst'
 import Sucursales from '../tablas/sucursales'
 import Clientes from '../tablas/clientes'
 import CartelBienvenida from '../../extras/cartelBienvenida'
-import ModificarCliente from '../tablas/clientes/modificarCliente'
+import ModificarCliente from '../tablas/clientes/agregar-modificarCliente'
 
 
 class Admin extends Component {

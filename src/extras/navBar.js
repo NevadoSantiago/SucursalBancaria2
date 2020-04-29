@@ -1,16 +1,19 @@
 import React, {Component} from 'react'
 import {CERRAR_SESION, AGREGAR_CLIENTE,AGREGAR_SUCURSAL} from '../constantes/ActionConst'
-import {AGENTES,AGENTE,AGENTE_CLIENTES,CLIENTES,MENSAJE,SUCURSAL,SUCURSALES,HOME} from '../constantes/VistasConst'
+import {AGENTES,AGENTE,AGENTE_CLIENTES,CLIENTES,MENSAJE_USUARIO,MENSAJE_AGENTE,SUCURSAL,SUCURSALES,HOME} from '../constantes/VistasConst'
 import {connect} from 'react-redux'
 import {USER, ADMIN, ROL_AGENTE} from '../constantes/RolesConst'
 import '../styles/estiloAdmin.css'
 
+var idActual = {
+  value : null,
+}
 
 class NavBar extends Component{
 
 render(){
-    const {rol, cerrarSesion, cambiarVista} = this.props
-
+    const {rol, cerrarSesion, cambiarVista, id} = this.props
+    idActual = id;
     switch(rol){
         case ROL_AGENTE:{
            return(               
@@ -29,7 +32,7 @@ render(){
                   <a className="nav-link" onClick={e => cambiarVista(SUCURSAL)}>Sucursal</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" onClick={e => cambiarVista(MENSAJE)}>Mensajes</a>
+                  <a className="nav-link" onClick={e => cambiarVista(MENSAJE_AGENTE)}>Mensajes</a>
                 </li>
               </ul>
               <div className="form-inline my-2 my-lg-0" id="cerrarSesion">
@@ -87,7 +90,7 @@ render(){
                       <a className="nav-link" onClick={e => cambiarVista(SUCURSAL)}>Sucursal</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" onClick={e => cambiarVista(MENSAJE)}>Mensajes</a>
+                      <a className="nav-link" onClick={e => cambiarVista(MENSAJE_USUARIO)}>Mensajes</a>
                     </li>
                   </ul>
                   <div className="form-inline my-2 my-lg-0" id="cerrarSesion">
@@ -104,12 +107,13 @@ render(){
 const mapDispatchToProps = dispatch =>{
     return {
         cerrarSesion: () => dispatch({type:CERRAR_SESION}),
-        cambiarVista: (dato) => dispatch({type:dato, dato})
+        cambiarVista: (dato) => dispatch({type:dato, dato:idActual })
     };
 }
 const mapStateToProps = state => {
     return{
         rol : state.user.rol,
+        id : state.user.id,
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

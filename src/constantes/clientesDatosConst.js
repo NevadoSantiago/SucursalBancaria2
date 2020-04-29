@@ -16,3 +16,13 @@ export const datosUsuarioConst = {
         usuariosACargo:[]
     }
 }
+export const datosSucursalConst = {
+    data:{
+        id: null,
+        direccion:null,
+        ciudad:null,
+        region:null,
+        tel:null,
+        correo:null,
+    }
+}

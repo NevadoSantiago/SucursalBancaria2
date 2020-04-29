@@ -1,6 +1,6 @@
 
 import {AGENTES,AGENTE,AGENTE_CLIENTES,CLIENTES,
-    MENSAJE,SUCURSAL,SUCURSALES} from '../constantes/VistasConst'
+    MENSAJE_USUARIO,MENSAJE_AGENTE,SUCURSAL,SUCURSALES} from '../constantes/VistasConst'
 import {MODIFICAR_USUARIO,MODIFICAR_SUCURSAL,HOME} from '../constantes/VistasConst'
 import {CLIENTE_EDITADO,SUCURSAL_EDITADA, VOLVER, AGREGAR_CLIENTE, AGREGAR_SUCURSAL,
     USUARIO_AGREGADO, SUCURSAL_AGREGADA} from '../constantes/ActionConst'
@@ -40,12 +40,20 @@ const vistaReducer = (state = initialState, action) => {
                 vista : CLIENTES
             }
         }
-        case MENSAJE :{
+        case MENSAJE_AGENTE :{
             return{
                 ...state,
                 vistaAnterior : state.vista,
-                vista : MENSAJE
+                vista : MENSAJE_AGENTE
             }
+        }
+        case MENSAJE_USUARIO :{
+            return{
+                ...state,
+                vistaAnterior : state.vista,
+                vista : MENSAJE_USUARIO
+            
+        }
         }
         case SUCURSAL :{
             return{

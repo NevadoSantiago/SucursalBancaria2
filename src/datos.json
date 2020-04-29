@@ -17,6 +17,7 @@
                         "ciudad":"Maartinez",
                         "tel":"24234334323",
                         "mail":"asds@gmail.com",
+                        "idAgente":3,
                         "usuariosACargo":[]
                     }
                 },
@@ -35,6 +36,7 @@
                         "ciudad":"Saavedra",
                         "tel":"34567876543",
                         "mail":"asds@gmail.com",
+                        "idAgente":6,
                         "usuariosACargo":[]
                     }
                 },
@@ -100,6 +102,7 @@
                         "ciudad":"Corrientes",
                         "tel":"1123323222",
                         "mail":"asds@yahoo.com",
+                        "idAgente":6,
                         "usuariosACargo":[]
                     }
                 },
@@ -118,6 +121,7 @@
                         "ciudad":"Hipodromo de palermo",
                         "tel":"334343",
                         "mail":"asdsss@hotmail.com",
+                        "idAgente":3,
                         "usuariosACargo":[]
                     }
                 },
