@@ -169,10 +169,13 @@ const datosBaseReducer = (state = initialState, action) => {
         case AGENTE:{
             const usuarioLogueado = traerUsuarioAModificar(state,action)
             const idAgenteAsociado = usuarioLogueado.data.idAgente
-            debugger
+            const data = {
+                dato : idAgenteAsociado,
+            }
+            const usuario = traerUsuarioAModificar(state, data)
            return{
                ...state,
-               mostrar:null
+               mostrar:usuario
            }
        }
         case SUCURSAL_EDITADA:{

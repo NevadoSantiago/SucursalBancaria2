@@ -18,6 +18,7 @@
                         "tel":"24234334323",
                         "mail":"asds@gmail.com",
                         "idAgente":3,
+                        "idSucursal":1,
                         "usuariosACargo":[]
                     }
                 },
@@ -37,6 +38,7 @@
                         "tel":"34567876543",
                         "mail":"asds@gmail.com",
                         "idAgente":6,
+                        "idSucursal":2,
                         "usuariosACargo":[]
                     }
                 },
@@ -54,6 +56,7 @@
                         "direccion":"calle falsa 1234",
                         "ciudad":"Saavedra Capital",
                         "tel":"345643",
+                        "idSucursal":3,
                         "mail":"asdddddss@gmail.com",
                         "usuariosACargo":[
                             {
@@ -102,6 +105,7 @@
                         "ciudad":"Corrientes",
                         "tel":"1123323222",
                         "mail":"asds@yahoo.com",
+                        "idSucursal":1,
                         "idAgente":6,
                         "usuariosACargo":[]
                     }
@@ -121,6 +125,7 @@
                         "ciudad":"Hipodromo de palermo",
                         "tel":"334343",
                         "mail":"asdsss@hotmail.com",
+                        "idSucursal":2,
                         "idAgente":3,
                         "usuariosACargo":[]
                     }
@@ -140,6 +145,7 @@
                         "ciudad":"Ciudad de",
                         "tel":"222222222",
                         "mail":"asdasas@gmail.com.ar",
+                        "idSucursal":3,
                         "usuariosACargo":[
                             {
                                 "id":2,

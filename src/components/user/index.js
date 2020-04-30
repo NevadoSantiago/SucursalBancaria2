@@ -10,13 +10,13 @@ import MensajeUsuario from '../mensajes/usuario'
 
 class User extends Component {
     render(){
-        const {name,vista} = this.props
+        const {name,vista, mostrar} = this.props
         switch(vista){
             case AGENTE:{
                 return(
                 <Fragment>
                     <NavBar/>
-                    <MostrarAgente data="vacio"/>
+                    <MostrarAgente data={mostrar}/>
                 </Fragment>
                 )
 
@@ -53,7 +53,8 @@ class User extends Component {
 const mapStateToProps = store =>{
     return{
         name : store.user.name,
-        vista: store.vista.vista
+        vista: store.vista.vista,
+        mostrar: store.datosBase.mostrar
     }
 }
 export default connect(mapStateToProps,null)(User)
